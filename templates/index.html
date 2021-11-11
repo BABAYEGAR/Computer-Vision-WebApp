@@ -1,0 +1,162 @@
+{% extends  'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block main %}
+<section id="teaser">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-xs-12 pull-right">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <h1 class="title">Find basic information about your dream cars
+                                <span class="subtitle"></span></h1>
+                            <div class="car-img">
+                                <img src="/assets/img/car1.png" class="img-responsive" alt="car1">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-12 pull-left">
+                <div class="reservation-form-shadow">
+
+                    <form action="#" method="post" name="car-select-form" id="car-select-form">
+
+                        <div class="alert alert-danger hidden" id="car-select-form-msg">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>Note:</strong> All fields required!
+                        </div>
+                        <div class="location">
+                            <div class="input-group pick-up">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-upload"></span> Upload Image</span>
+                                <input type="file" name="Image" accept="image/*;capture=camera"
+                                       class="form-control autocomplete-location">
+                            </div>
+
+                        </div>
+                           <div class="location">
+                            <div class="input-group pick-up">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> Zip Code</span>
+                                <input type="text" name="ZipCode" accept="image/*;capture=camera"
+                                       class="form-control autocomplete-location">
+                            </div>
+
+                        </div>
+                        <input type="submit" class="submit" name="submit" value="Find Car">
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="arrow-down"></div>
+<section id="vehicles" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="title wow fadeInDown" data-wow-offset="200">Vehicle Models - <span class="subtitle">Our rental fleet at a glance</span>
+            </h2>
+        </div>
+        <div class="col-md-3 wow fadeInUp" data-wow-offset="100">
+            <div id="vehicle-nav-container">
+                <ul class="vehicle-nav">
+                    <li class="active"><a href="#vehicle-1">VW Golf VII</a><span class="active">&nbsp;</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="vehicle-data" id="vehicle-1">
+            <div class="col-md-6 wow fadeIn" data-wow-offset="100">
+                <div class="vehicle-img">
+                    <img class="img-responsive" src="/assets/img/vehicle1.jpg" alt="Vehicle">
+                </div>
+            </div>
+            <div class="col-md-3 wow fadeInUp" data-wow-offset="200">
+                <div class="vehicle-price">$ 37.40 <span class="info">rent per day</span></div>
+                <table class="table vehicle-features">
+                    <tr>
+                        <td>Model</td>
+                        <td>Limousine</td>
+                    </tr>
+                    <tr>
+                        <td>Doors</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Seats</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Luggage</td>
+                        <td>2 Suitcases / 2 Bags</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>Automatic</td>
+                    </tr>
+                    <tr>
+                        <td>Air conditioning</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum age</td>
+                        <td>25 years</td>
+                    </tr>
+                </table>
+                <a href="#teaser" class="reserve-button scroll-to"><span class="glyphicon glyphicon-calendar"></span>
+                    Reserve now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="container wow bounceInUp" data-wow-offset="50">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="col-md-12 col-xs-12 pull-left">
+            <p class="contact-info">You have any questions or need additional information? <br>
+                <span class="address"><span class="highlight">Address:</span>  Car|Rental / 3861 Sepulveda Blvd. / Culver City, CA 90230</span>
+            </p>
+            <form action="#" method="post" id="contact-form" name="contact-form">
+
+                <div class="alert hidden" id="contact-form-msg"></div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control first-name text-field" name="first-name"
+                           placeholder="First Name:">
+                    <input type="text" class="form-control last-name text-field" name="last-name"
+                           placeholder="Last Name:">
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" class="form-control telephone text-field" name="telephone"
+                           placeholder="Telephone:">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control email text-field" name="email" placeholder="Email:">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control message" name="message" placeholder="Message:"></textarea>
+                </div>
+
+                <input type="submit" class="btn submit-message" name="submit-message" value="Submit Message">
+
+
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
